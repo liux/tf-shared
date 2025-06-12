@@ -1,0 +1,20 @@
+<div class="tf-preference-editor-container">
+  <div class="tf-preference-editor-header">
+    <nz-select
+      nzShowSearch
+      [(ngModel)]="selectedPreference"
+      nzPlaceHolder="请选择配置项"
+      (ngModelChange)="onKeyChange($event)"
+    >
+      @for(item of dropdownOptions(); track item.key ){
+      <nz-option [nzValue]="item.key" [nzLabel]="item.value"></nz-option>
+      }
+    </nz-select>
+  </div>
+  <json-editor [options]="editorOptions" [data]="data()"></json-editor>
+  <div class="tf-preference-editor-footer">
+    <button nz-button nzType="primary" (click)="onSaveClicked()">
+      {{ buttonText() }}
+    </button>
+  </div>
+</div>

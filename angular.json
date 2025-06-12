@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "tf-preference": {
+    "tf-shared-project": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/tf-preference",
+            "outputPath": "dist/tf-shared-project",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "tf-preference:build:production"
+              "buildTarget": "tf-shared-project:build:production"
             },
             "development": {
-              "buildTarget": "tf-preference:build:development"
+              "buildTarget": "tf-shared-project:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -94,6 +94,39 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "tf-shared": {
+      "projectType": "library",
+      "root": "projects/tf-shared",
+      "sourceRoot": "projects/tf-shared/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/tf-shared/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/tf-shared/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/tf-shared/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/tf-shared/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }

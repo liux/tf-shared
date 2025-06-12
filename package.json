@@ -1,10 +1,11 @@
 {
-  "name": "tf-preference",
+  "name": "tf-shared",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build tf-shared",
+    "publish": "npm publish ./dist/tf-shared --access public",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -17,6 +18,9 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
+    "@livx/ng-jsoneditor": "^0.0.3",
+    "jsoneditor": "^10.2.0",
+    "ng-zorro-antd": "^19.2.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -32,6 +36,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^19.2.0",
     "typescript": "~5.7.2"
   }
 }

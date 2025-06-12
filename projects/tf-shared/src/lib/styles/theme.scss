@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/jsoneditor/dist/jsoneditor.min.css";
+
+json-editor {
+  width: 100%;
+  height: 100%;
+  display: block;
+  & > div {
+    height: 100%;
+  }
+}
+
+.tf-preference-editor-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tf-preference-editor-footer {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.tf-preference-editor-header {
+  margin-bottom: 1em;
+  nz-select {
+    width: 300px;
+  }
+}
+.jsoneditor-poweredBy{
+  display: none !important;
+}
