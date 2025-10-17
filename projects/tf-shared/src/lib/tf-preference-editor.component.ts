@@ -12,16 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { JsonEditorOptions, NgJsoneditorComponent } from '@livx/ng-jsoneditor';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { NzMessageModule, NzMessageService } from 'ng-zorro-antd/message';
+import { NzMessageService } from 'ng-zorro-antd/message';
 @Component({
   selector: 'tf-preference-editor',
-  imports: [
-    NgJsoneditorComponent,
-    NzSelectModule,
-    FormsModule,
-    NzButtonModule,
-    NzMessageModule,
-  ],
+  imports: [NgJsoneditorComponent, NzSelectModule, FormsModule, NzButtonModule],
   templateUrl: './tf-preference-editor.component.html',
   styles: ``,
 })
@@ -79,7 +73,7 @@ export class TfPreferenceEditorComponent {
     if (this.validateErrors.length > 0) {
       this.message.error(this.errorMessage());
     } else {
-      this.onSave.emit(JSON.parse(this.editor.getText()||"{}"));
+      this.onSave.emit(JSON.parse(this.editor.getText() || '{}'));
     }
   }
 }

@@ -1,12 +1,12 @@
 {
   "name": "@livx/tf-shared",
-  "version": "0.0.9",
+  "version": "20.0.0",
   "peerDependencies": {
-    "@angular/common": "^19.2.0",
-    "@angular/core": "^19.2.0",
-    "@livx/ng-jsoneditor": "^0.0.3",
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@livx/ng-jsoneditor": "^20.0.0",
     "jsoneditor": "^10.2.0",
-    "ng-zorro-antd": "^19.2.1"
+    "ng-zorro-antd": "^20.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
