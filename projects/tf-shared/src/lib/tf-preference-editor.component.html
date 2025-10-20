@@ -13,8 +13,10 @@
   </div>
   <json-editor [options]="editorOptions" [data]="data()"></json-editor>
   <div class="tf-preference-editor-footer">
+    @if(showButton()&&!isReadOnly()){
     <button nz-button nzType="primary" (click)="onSaveClicked()">
       {{ buttonText() }}
     </button>
+    }
   </div>
 </div>

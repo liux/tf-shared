@@ -1,6 +1,11 @@
 {
   "name": "@livx/tf-shared",
-  "version": "20.0.0",
+  "version": "20.0.1",
+  "homepage": "https://github.com/liux/tf-shared",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liux/tf-shared"
+  },
   "peerDependencies": {
     "@angular/common": "^20.0.0",
     "@angular/core": "^20.0.0",

@@ -28,14 +28,21 @@ export class TfPreferenceEditorComponent {
     mainMenuBar: true,
     statusBar: false,
     navigationBar: false,
+
     // expandAll: true,
     onValidationError: (error: any) => {
       this.validateErrors = error;
+    },
+    onEditable: () => {
+      return !this.isReadOnly();
     },
   };
 
   public onSelectedChange = output<string>();
   public onSave = output<any>();
+
+  public showButton = input<boolean>(true);
+  public isReadOnly = input<boolean>(false);
 
   public errorMessage = input('Json格式不正确，请检查后在重新提交');
   public buttonText = input('保存配置');
